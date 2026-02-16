@@ -6,12 +6,9 @@ export default function SignInPage() {
     return (
         <>
             <h2>Login</h2>
-            <div className="sign-in">
+            <div className="clerk-auth">
                 <SignIn />
             </div>
-            <nav>
-                <Link href="/" title="home page">Home</Link>
-            </nav>
         </>
     );
 }

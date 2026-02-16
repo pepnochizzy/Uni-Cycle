@@ -1,7 +1,5 @@
-export default async function studentarea() {
+export default async function StudentArea() {
   return (
-    <>
-      <h1>Student Area</h1>
-    </>
+    <h2>Student Area</h2>
   );
 }

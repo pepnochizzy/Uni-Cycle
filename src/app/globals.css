@@ -34,26 +34,28 @@ p {
   line-height: 175%;
 }
 
-.sign-in,
-.sign-up {
+.clerk-auth {
   display: flex;
   justify-content: center;
-  gap: 10px;
   margin: 5% 2%;
 }
 
-a {
-  transition: 0.3s;
+.sign-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 a,
 button,
-.sign-in,
-.sign-up,
 option,
 button,
 .button {
   cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .my-form {
@@ -75,36 +77,38 @@ select {
   display: block;
   margin: 15px 0 30px 0;
   background-color: #fff;
-  padding: 5px 10px;
-  /* font-family: monospace; */
+  padding: 6px 10px;
   font-size: 150%;
 }
 
-.sign-in,
-.sign-up {
-  display: flex;
-  justify-content: center;
-  margin: 5% 2%;
-}
-
-button,
 .button {
-  padding: 20px;
+  border: 0;
+  padding: 20px 35px;
   color: #fff;
   background-color: #77AF9C;
   border-radius: 10px;
 }
 
-button {
-  border: 0;
+.button:hover {
+  background-color: #AAFCB8;
+  color: #285943;
 }
 
 a:hover,
 button:hover,
 .button:hover {
   transition: 0.3s;
-  background-color: #AAFCB8;
-  color: #285943;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.dropdown {
+  display: inline-block;
 }
 
 /* #radix-_R_77lb_ {

@@ -16,7 +16,10 @@ export default async function Navbar() {
         >
           Marketplace
         </Link>
-        <div className="pl-4">
+        <div
+        // className="dropdown"
+         className="pl-4"
+         >
           <NavDropdown />
         </div>
       </div>

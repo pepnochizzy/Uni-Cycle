@@ -9,10 +9,10 @@ export default function SubmitForm() {
 
   return (
     <>
-      <form action={createPost}>
+      <form className="my-form" action={createPost}>
         <div>
           <label>What are you offering?</label>
-          <textarea name="post" required />
+          <textarea name="post" rows="6" required />
         </div>
 
         <div>
@@ -32,7 +32,7 @@ export default function SubmitForm() {
           <ImageUpload onUpload={setImageUrl} />
           <input type="hidden" name="image" value={imageUrl} />
         </div>
-        <button type="submit">Submit</button>
+        <button className="button" type="submit">Submit</button>
       </form>
     </>
   );

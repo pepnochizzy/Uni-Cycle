@@ -7,10 +7,13 @@ export default function Home() {
       <h2>Homepage</h2>
       <SubmitForm />
       {/* just put bg color and flex for our visibility, remove when styling */}
-      <div className="bg-[#77AF9C] flex place-content-around">
-        <SignUpButton />
-        <SignInButton />
-      </div>
+
+
+        <div>
+          <SignUpButton />
+          <SignInButton />
+        </div>
+
     </div>
   );
 }

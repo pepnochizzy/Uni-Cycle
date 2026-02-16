@@ -1,18 +1,11 @@
-// home page
-// import Link from "next/link";
-import { SignedOut, SignUpButton, SignInButton } from "@clerk/nextjs";
+import SubmitForm from "@/components/SubmitForm";
 
 export default function Home() {
   return (
-    <>
-      <h2>Home</h2>
-      <div>
-        <SignedOut>
-          <SignUpButton>Sign-up</SignUpButton>
-          <SignInButton>Login</SignInButton>
-        </SignedOut>
-      </div>
-    </>
+    <div>
+      <h2>Homepage</h2>
+      <SubmitForm />
+    </div>
   );
 }
 

@@ -27,8 +27,7 @@ export default function SubmitForm() {
 
   return (
     <>
-      <form className="my-form" action={createPost}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="my-form">
         <div>
           <label>What are you offering?</label>
           <textarea name="post" rows="6" required />
@@ -48,7 +47,9 @@ export default function SubmitForm() {
           <ImageUpload onUpload={setImageUrl} />
           <input type="hidden" name="image" value={imageUrl} />
         </div>
-        <button className="button" type="submit">Submit</button>
+        <button className="button" type="submit">
+          Submit
+        </button>
       </form>
     </>
   );

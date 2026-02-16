@@ -1,10 +1,8 @@
-import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
 import NavDropdown from "./NavDropdown";
 
 //homepage, market  place, profile page/sign out
 export default async function Navbar() {
-  const { userId } = await auth();
   return (
     <nav className="flex place-content-between">
       <Link href={"/"}>Logo placeholder</Link>

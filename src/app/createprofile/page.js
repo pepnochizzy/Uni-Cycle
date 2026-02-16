@@ -1,5 +1,7 @@
 import { db } from "@/utils/dbConnections";
 import { auth } from "@clerk/nextjs/server";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export default async function CreateProfilePage() {
   async function handleCreateProfile(rawFormData) {
@@ -27,6 +29,8 @@ export default async function CreateProfilePage() {
         formValues.university,
       ],
     );
+    revalidatePath(`/studentarea/${userId}`);
+    redirect(`/studentarea/${userId}`);
   }
   return (
     <>

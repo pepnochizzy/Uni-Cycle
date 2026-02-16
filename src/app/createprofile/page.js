@@ -12,18 +12,18 @@ export default async function CreateProfilePage() {
       username: rawFormData.get("username"),
       first_name: rawFormData.get("firstname"),
       last_name: rawFormData.get("surname"),
-      avatar_url: rawFormData.get("avatarlink"),
+      //   avatar_url: rawFormData.get("avatarlink"),
       university: rawFormData.get("uniname"),
     };
 
     await db.query(
-      `INSERT INTO uni_users (clerk_id, username, first_name, last_name, avatar_url, university) VALUES ($1, $2, $3, $4, $5, $6)`,
+      `INSERT INTO uni_users (clerk_id, username, first_name, last_name, university) VALUES ($1, $2, $3, $4, $5)`,
       [
         formValues.id,
         formValues.username,
         formValues.first_name,
         formValues.last_name,
-        formValues.avatar_url,
+        // formValues.avatar_url,
         formValues.university,
       ],
     );
@@ -38,10 +38,11 @@ export default async function CreateProfilePage() {
         <input type="text" name="firstname" maxLength={64} required />
         <label htmlFor="surname">Your last name:</label>
         <input type="text" name="surname" maxLength={64} required />
-        <label htmlFor="avatarlink">Link to your profile picture:</label>
-        <input type="text" name="avatarlink" />
+        {/* <label htmlFor="avatarlink">Link to your profile picture:</label>
+        <input type="text" name="avatarlink" /> */}
         <label htmlFor="uniname">Your university:</label>
         <input type="text" name="uniname" required />
+        <button type="submit">Submit profile settings and finish</button>
       </form>
     </>
   );

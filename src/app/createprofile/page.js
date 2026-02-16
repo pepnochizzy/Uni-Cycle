@@ -1,9 +1,16 @@
+import { supabaseServer } from "@/lib/supabaseServer";
 import { db } from "@/utils/dbConnections";
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export default async function CreateProfilePage() {
+  //TODO: add universities as dropdown from supabase
+
+  const { rows: university } = await db.query(
+    `SELECT id, university FROM university ORDER BY university ASC`,
+  );
+
   async function handleCreateProfile(rawFormData) {
     "use server";
     const { userId } = await auth();
@@ -44,8 +51,14 @@ export default async function CreateProfilePage() {
         <input type="text" name="surname" maxLength={64} required />
         {/* <label htmlFor="avatarlink">Link to your profile picture:</label>
         <input type="text" name="avatarlink" /> */}
-        <label htmlFor="uniname">Your university:</label>
-        <input type="text" name="uniname" required />
+        <select name="uniname" required>
+          <option value="">Select your university</option>
+          {university.map((u) => (
+            <option key={u.id} value={u.university}>
+              {u.university}
+            </option>
+          ))}
+        </select>
         <button type="submit">Submit profile settings and finish</button>
       </form>
     </>

@@ -20,6 +20,9 @@ export default function SubmitForm() {
 
     const result = await createPost(formData);
     console.log(result);
+
+    e.target.reset();
+    setImageUrl("");
   }
 
   return (

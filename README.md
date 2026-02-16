@@ -36,6 +36,11 @@ This is an example of how you may give instructions on setting up your project l
 
 ## Resources
 
+# Supabase Buckets
+
+https://supabase.com/storage
+https://supabase.com/docs/reference/javascript/initializing
+
 ## Reflections
 
 ### What went well?

@@ -1,14 +1,14 @@
 "use server";
 
 import { supabaseServer } from "@/lib/supabaseServer";
-import { auth } from "@clerk/nextjs/server";
 
 export async function createPost(formData) {
-  const { userId } = auth();
-
   const post = formData.get("post");
   const category = formData.get("category");
   const image = formData.get("image");
+  const clerk_id = formData.get("clerk_id");
+
+  console.log("Clerk ID received", clerk_id);
 
   const { data, error } = await supabaseServer
     .from("uni_posts")
@@ -16,7 +16,7 @@ export async function createPost(formData) {
       post,
       category,
       image,
-      clerk_id: userId,
+      clerk_id,
       created_at: new Date(),
     })
     .select();

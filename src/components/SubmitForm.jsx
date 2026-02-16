@@ -1,17 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { useUser } from "@clerk/nextjs";
 import ImageUpload from "@/components/Upload";
 import { createPost } from "@/app/actions/createPost";
 
 export default function SubmitForm() {
   const [imageUrl, setImageUrl] = useState("");
+  const { user, isLoaded, isSignedIn } = useUser();
+
+  if (!isLoaded || !isSignedIn) return null;
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     const formData = new FormData(e.target);
     formData.set("image", imageUrl);
+    formData.set("clerk_id", user.id);
 
     const result = await createPost(formData);
     console.log(result);

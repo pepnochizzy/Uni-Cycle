@@ -1,5 +1,4 @@
 import Link from "next/link";
-import NavDropdown from "./NavDropdown";
 import { auth } from "@clerk/nextjs/server";
 import { db } from "@/utils/dbConnections";
 import Image from "next/image";

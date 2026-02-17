@@ -4,13 +4,12 @@ import Image from "next/image";
 
 export default async function MarketPlace() {
   const marketItems = await db.query(`SELECT * FROM uni_posts`);
-  //   const parsedMarketItems = marketItems.rows;
-
-  console.log(marketItems);
+  // const parsedMarketItems = marketItems.rows;
+  // console.log(marketItems);
 
   return (
     <>
-      <h2>Maretplace</h2>
+      <h2>Marketplace</h2>
       <div>
         {marketItems.rows.map((marketItem) => {
           return (

@@ -7,7 +7,7 @@ import Link from "next/link";
 //do we want the nav to show "student area" instead of profile for consistency?
 export default async function NavDropdown() {
   "use client";
-  const { userId } = auth();
+  const { userId } = await auth();
   return (
     <Dropdown.Root>
       <Dropdown.Trigger asChild>

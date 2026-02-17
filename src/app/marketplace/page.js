@@ -13,19 +13,21 @@ export default async function MarketPlace() {
       <div>
         {marketItems.rows.map((marketItem) => {
           return (
-            <Link key={marketItem.id} href={`/marketplace/${marketItem.id}`}>
-              <article>
-                <Image
-                  src={marketItem.image}
-                  alt={marketItem.post}
-                  width={256}
-                  height={256}
-                />
+            // <Link key={marketItem.id} href={`/marketplace/${marketItem.id}`}>
+            <article key={marketItem.id} >
+              <Image
+                src={marketItem.image}
+                alt={marketItem.post}
+                width={1000}
+                height={1000}
+              />
+              <div>
                 <p>{marketItem.post}</p>
                 <p>{marketItem.category}</p>
                 <p>{marketItem.created_at.toLocaleString()}</p>
-              </article>
-            </Link>
+              </div>
+              <Link className="button" href={`/marketplace/${marketItem.id}`} title="view listing">view</Link>
+            </article>
           );
         })}
       </div>

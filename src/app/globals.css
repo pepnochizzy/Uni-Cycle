@@ -63,11 +63,15 @@ a:hover {
   margin: 0 auto 5% auto;
   padding: 30px 30px 40px 30px;
   background-color: #eee;
-  border-radius: 10px;
+}
+
+.my-form,
+article {
+  border-radius: 20px;
 }
 
 label {
-  padding: 0 0 10px 0;
+  padding: 0 0 12px 0;
 }
 
 .my-form input,
@@ -77,21 +81,23 @@ select {
   display: block;
   margin: 15px 0 30px 0;
   background-color: #fff;
-  padding: 6px 10px;
-  font-size: 150%;
+  padding: 20px;
 }
 
 .button {
+  display: block;
   border: 0;
-  padding: 20px 35px;
+  padding: 20px 30px;
   color: #fff;
   background-color: #77AF9C;
   border-radius: 10px;
+  text-align: center;
 }
 
 .button:hover {
   background-color: #AAFCB8;
   color: #285943;
+  text-decoration: none;
 }
 
 a:hover,
@@ -107,6 +113,42 @@ nav {
 
 
 
+article {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 30px;
+  margin: 2% auto;
+}
+
+article img {
+  width: 100%;
+  height: auto;
+  margin: 0 0 20px 0;
+}
+
+article .button {
+  margin: 35px 0 0 0;
+  max-width: fit-content;
+}
+
+
+
+
+hr {
+  margin-bottom: 50px;
+}
+
+footer {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 125%;
+  padding: 120px 10px 100px 10px;
+  letter-spacing: 1px;
+}
+
+/* for testing remove if necessary */
 .dropdown {
   display: inline-block;
 }
@@ -133,50 +175,8 @@ nav,
     margin: 75px auto 100px auto;
 }
 
-.user-list {
-    flex-direction: column;
-}
-
-nav a,
-.user-list a,
-.button {
-    flex: 1;
-    text-decoration: none;
-}
-
-.my-form {
-    margin: 50px auto;
-}
-
 .my-form button {
     width: 100%;
-}
-
-.user-data {
-    margin: 12% 0;
-    padding: 2%;
-}
-
-.user-post {
-    margin: 0 0 20px 0;
-    padding: 1.4em 1em 1.6em 1em;
-}
-
-.user-data,
-.user-post {
-    background-color: aliceblue;
-    border-radius: 10px;
-}
-
-hr {
-    margin-bottom: 50px;
-}
-
-footer {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 125%;
-    padding: 120px 10px 100px 10px;
-    letter-spacing: 1px;
 }
 
 @media screen and (min-width:900px) {

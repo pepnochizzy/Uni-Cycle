@@ -28,6 +28,7 @@
 @media (min-width: 1024px) {
   .profileDiv {
     width: 60vw;
-    justify-self: center;
+    /* justify-self: center; */
+    margin: 20px auto;
   }
 }

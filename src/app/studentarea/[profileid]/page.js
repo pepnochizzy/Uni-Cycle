@@ -1,6 +1,10 @@
 import Listings from "@/components/Listings";
 import { db } from "@/utils/dbConnections";
 import { notFound } from "next/navigation";
+import { UserButton } from "@clerk/nextjs";
+import style from "@/styles/studentarea.module.css";
+import { GraduationCap } from "lucide-react";
+import { User } from "lucide-react";
 
 export default async function StudentArea({ params }) {
   const { profileid } = await params;
@@ -27,21 +31,33 @@ export default async function StudentArea({ params }) {
 
   return (
     <>
-      <div>
-        <h1>{profile.username}&apos;s Profile</h1>
-
-        <div>
-          <h2>First Name: {profile.first_name}</h2>
-          <h2>Last Name: {profile.last_name}</h2>
-          <h2>University: {profile.university}</h2>
+      <div className={style.profileDiv}>
+        <div className={style.usernameDiv}>
+          <h1 className="font-bold">{profile.username}&apos;s Profile</h1>
+          <UserButton />
+        </div>
+        <div className="flex flex-row place-content-between">
+          <div>
+            <h2 className="flex flex-row items-center gap-4">
+              <User /> {profile.first_name} {profile.last_name}
+            </h2>
+          </div>
+          <div className={style.uniInfo}>
+            <h2 className="flex flex-row items-center gap-4">
+              <GraduationCap /> {profile.university}
+            </h2>
+          </div>
         </div>
       </div>
-      <h2>{profile.username}&apos;s Listings</h2>
-      {posts.length === 0 && <p>No listings yet</p>}
-
-      {posts.map((post) => (
-        <Listings key={post.id} post={post} />
-      ))}
+      <div className="flex flex-col">
+        <h2 className="font-bold">{profile.username}&apos;s Listings</h2>
+        {posts.length === 0 && <p>No listings yet</p>}
+        <div className="self-center">
+          {posts.map((post) => (
+            <Listings key={post.id} post={post} />
+          ))}
+        </div>
+      </div>
     </>
   );
 }

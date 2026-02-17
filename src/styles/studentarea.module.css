@@ -1,0 +1,33 @@
+.usernameDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+.profileDiv {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #77af9c;
+  box-shadow:
+    inset 13px 13px 20px #659585,
+    inset -13px -13px 20px #89c9b3;
+  border-radius: 20px;
+  padding: 10px 20px 2px 20px;
+}
+
+.nameInfo {
+  margin-left: 20px;
+}
+
+.uniInfo {
+  margin-right: 40px;
+}
+
+@media (min-width: 1024px) {
+  .profileDiv {
+    width: 60vw;
+    justify-self: center;
+  }
+}

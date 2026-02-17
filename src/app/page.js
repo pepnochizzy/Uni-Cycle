@@ -1,19 +1,21 @@
+// root / homepage
 import SubmitForm from "@/components/SubmitForm";
-import { SignInButton, SignUpButton } from "@clerk/nextjs";
+import { UserButton, SignInButton, SignUpButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default function Home() {
   return (
     <div>
       <h2>Homepage</h2>
-      <SubmitForm />
-      {/* just put bg color and flex for our visibility, remove when styling */}
-
-
-        <div>
-          <SignUpButton />
-          <SignInButton />
+      <SignedOut>
+        <div className="sign-buttons">
+          <SignUpButton className="button" />
+          <SignInButton className="button" />
         </div>
-
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
+      <SubmitForm />
     </div>
   );
 }

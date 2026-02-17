@@ -11,7 +11,7 @@ export default async function NavDropdown() {
   return (
     <Dropdown.Root>
       <Dropdown.Trigger asChild>
-        <button className="hover:cursor-pointer">
+        <button>
           <Menu />
         </button>
       </Dropdown.Trigger>

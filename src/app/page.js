@@ -13,12 +13,8 @@ export default function Home() {
   return (
     <>
       <div>
-        <h2>Homepage</h2>
         <SignedOut>
-          <div className="sign-buttons">
-            <SignUpButton className="button" />
-            <SignInButton className="button" />
-          </div>
+          <div className="sign-buttons"></div>
         </SignedOut>
         <SignedIn>
           <UserButton />

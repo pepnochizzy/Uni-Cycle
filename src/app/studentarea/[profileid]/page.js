@@ -5,6 +5,7 @@ import { UserButton } from "@clerk/nextjs";
 import style from "@/styles/studentarea.module.css";
 import { GraduationCap } from "lucide-react";
 import { User } from "lucide-react";
+import SubmitForm from "@/components/SubmitForm";
 
 export default async function StudentArea({ params }) {
   const { profileid } = await params;
@@ -50,6 +51,9 @@ export default async function StudentArea({ params }) {
         </div>
       </div>
       <div className="flex flex-col">
+        <div>
+          <SubmitForm />
+        </div>
         <h2 className="font-bold">{profile.username}&apos;s Listings</h2>
         {posts.length === 0 && <p>No listings yet</p>}
         <div className="self-center">

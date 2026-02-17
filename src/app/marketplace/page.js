@@ -5,9 +5,12 @@ import Image from "next/image";
 export default async function MarketPlace() {
   const marketItems = await db.query(`SELECT uni_posts.*,
       (SELECT COUNT(*) FROM uni_likes WHERE post_id = uni_posts.id) AS likes_count,
-      (SELECT COUNT(*) FROM uni_comments WHERE post_id = uni_posts.id) AS comment_count
-     FROM uni_posts
-     ORDER BY created_at DESC`);
+      (SELECT COUNT(*) FROM uni_comments WHERE post_id = uni_posts.id) AS comment_count,
+      uni_users.username
+     FROM uni_posts JOIN uni_users ON uni_posts.clerk_id = uni_users.clerk_id
+     ORDER BY uni_posts.created_at DESC`);
+  // const parsedMarketItems = marketItems.rows;
+  // console.log(marketItems);
 
   return (
     <>

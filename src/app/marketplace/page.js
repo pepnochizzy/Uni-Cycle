@@ -3,7 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default async function MarketPlace() {
-  const marketItems = await db.query(`SELECT * FROM uni_posts`);
+  const marketItems = await db.query(`SELECT uni_posts.*,
+      (SELECT COUNT(*) FROM uni_likes WHERE post_id = uni_posts.id) AS likes_count,
+      (SELECT COUNT(*) FROM uni_comments WHERE post_id = uni_posts.id) AS comment_count
+     FROM uni_posts
+     ORDER BY created_at DESC`);
   // const parsedMarketItems = marketItems.rows;
   // console.log(marketItems);
 
@@ -23,7 +27,9 @@ export default async function MarketPlace() {
                 />
                 <p>{marketItem.post}</p>
                 <p>{marketItem.category}</p>
-                <p>{marketItem.created_at.toLocaleString()}</p>
+                <p>{new Date(marketItem.created_at).toLocaleString()}</p>
+                <p>❤️ {marketItem.likes_count}</p>
+                <p>💬{marketItem.comment_count}</p>
               </article>
             </Link>
           );

@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Likes from "./Likes";
+import Comments from "./Comments";
 
 export default function Listings({ post }) {
   return (
@@ -23,8 +25,8 @@ export default function Listings({ post }) {
           />
         )}
         <p>Posted at: {new Date(post.created_at).toLocaleString()}</p>
-        {/* <Likes></Likes>
-    <Comments></Comments> */}
+        <Likes postId={post.id} likesCount={post.likes_count} />
+        <Comments postId={post.id} />
       </div>
     </>
   );

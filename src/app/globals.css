@@ -134,6 +134,18 @@ article .button {
   max-width: fit-content;
 }
 
+.post-info {
+  margin: 0 0 75px 0;
+}
+
+.counts {
+  text-align: right;
+}
+
+.counts p {
+  margin: 20px;
+}
+
 
 
 

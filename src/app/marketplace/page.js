@@ -35,8 +35,8 @@ export default async function MarketPlace() {
                 <p>{new Date(marketItem.created_at).toLocaleString()}</p>
                 <p>❤️ {marketItem.likes_count}</p>
                 <p>💬{marketItem.comment_count}</p>
-              </article>
-            </Link>
+              
+           
           );
         })}
       </div>

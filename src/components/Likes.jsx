@@ -1,4 +1,4 @@
-import { db } from "@/utils/dbConnection";
+import { db } from "@/utils/dbConnections";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";

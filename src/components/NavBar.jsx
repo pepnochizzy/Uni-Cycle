@@ -1,9 +1,9 @@
 import Link from "next/link";
-import NavDropdown from "./NavDropdown";
 import { auth } from "@clerk/nextjs/server";
 import { db } from "@/utils/dbConnections";
 import Image from "next/image";
 import logo from "@/../public/assets/logo.png";
+import { SignedIn } from "@clerk/nextjs";
 
 //homepage, market  place, profile page/sign out
 export default async function Navbar() {
@@ -27,10 +27,9 @@ export default async function Navbar() {
         {/* <Link href={"/marketplace"} className="pl-4 pr-4 border-r-2 border-r-[#77AF9C]"> */}
         <Link href={"/marketplace"}>Marketplace</Link>&nbsp;|&nbsp;
         {/* <div className="pl-4"> */}
-        <Link href={`/studentarea/${user.username}`}>Profile</Link>
-        <div className="dropdown">
-          <NavDropdown />
-        </div>
+        <SignedIn>
+          <Link href={`/studentarea/${user.username}`}>Profile</Link>
+        </SignedIn>
       </div>
     </nav>
   );

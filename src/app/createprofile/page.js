@@ -36,8 +36,8 @@ export default async function CreateProfilePage() {
         formValues.university,
       ],
     );
-    revalidatePath(`/studentarea/${userId}`);
-    redirect(`/studentarea/${userId}`);
+    revalidatePath(`/studentarea/${formValues.username}`);
+    redirect(`/studentarea/${formValues.username}`);
   }
   return (
     <>

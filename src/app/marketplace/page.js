@@ -17,26 +17,29 @@ export default async function MarketPlace() {
       <div>
         {marketItems.rows.map((marketItem) => {
           return (
-            // <Link key={marketItem.id} href={`/marketplace/${marketItem.id}`}>
-            <article key={marketItem.id} >
-              <Image
-                src={marketItem.image}
-                alt={marketItem.post}
-                width={1000}
-                height={1000}
-              />
-              <div>
-                <p>{marketItem.post}</p>
-                <p>{marketItem.category}</p>
-                <p>{marketItem.created_at.toLocaleString()}</p>
-              </div>
-              <Link className="button" href={`/marketplace/${marketItem.id}`} title="view listing">view</Link>
-            </article>
+            <article key={marketItem.id}>
+              <Link
+                className="button"
+                href={`/marketplace/${marketItem.id}`}
+                title="view listing"
+              >
+                <Image
+                  src={marketItem.image}
+                  alt={marketItem.post}
+                  width={1000}
+                  height={1000}
+                />
+                <div>
+                  <p>{marketItem.post}</p>
+                  <p>{marketItem.category}</p>
+                  <p>{marketItem.created_at.toLocaleString()}</p>
+                </div>
+                <p>view</p>
                 <p>{new Date(marketItem.created_at).toLocaleString()}</p>
                 <p>❤️ {marketItem.likes_count}</p>
                 <p>💬{marketItem.comment_count}</p>
-              </article>
-            </Link>
+              </Link>
+            </article>
           );
         })}
       </div>

@@ -1,5 +1,6 @@
 // root / homepage
 import AboutUsOne from "@/components/AboutUsOne";
+import HomepageFeed from "@/components/HomepageFeed";
 import {
   UserButton,
   SignInButton,
@@ -20,6 +21,7 @@ export default function Home() {
         </SignedIn>
       </div>
       <AboutUsOne />
+      <HomepageFeed />
     </>
   );
 }

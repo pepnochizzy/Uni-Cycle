@@ -5,6 +5,7 @@ import Link from "next/link";
 import Comments from "@/components/Comments";
 import Likes from "@/components/Likes";
 import style from "@/styles/comments.module.css";
+import { currentUser } from "@clerk/nextjs/server";
 
 // export default async function ItemPage({ params }) {
 //     const { item } = await params;
@@ -35,6 +36,9 @@ import style from "@/styles/comments.module.css";
 //                 })}
 
 export default async function ItemPage({ params }) {
+  const user = await currentUser();
+  const userId = user?.id;
+
   const { item } = await params;
   const query = await db.query(
     `SELECT 
@@ -67,6 +71,15 @@ export default async function ItemPage({ params }) {
                 <p>{new Date(marketItem.created_at).toLocaleString()}</p>
                 <p className={style.date}>{marketItem.category}</p>
                 <p>{marketItem.post}</p>
+
+                {marketItem.clerk_id === userId && (
+                  <Link
+                    className="button"
+                    href={`/marketplace/${marketItem.id}/edit`}
+                  >
+                    Edit Post
+                  </Link>
+                )}
 
                 <Likes
                   postId={marketItem.id}

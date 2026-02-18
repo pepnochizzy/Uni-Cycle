@@ -6,8 +6,13 @@ import style from "@/styles/studentarea.module.css";
 import { GraduationCap } from "lucide-react";
 import { User } from "lucide-react";
 import SubmitForm from "@/components/SubmitForm";
+import Link from "next/link";
+import { currentUser } from "@clerk/nextjs/server";
+import { deletePost } from "@/app/actions/deletePost";
 
 export default async function StudentArea({ params }) {
+  const user = await currentUser();
+  const userId = user?.id;
   const { profileid } = await params;
 
   const profileQuery = await db.query(
@@ -58,7 +63,25 @@ export default async function StudentArea({ params }) {
         {posts.length === 0 && <p>No listings yet</p>}
         <div className="self-center">
           {posts.map((post) => (
-            <Listings key={post.id} post={post} />
+            <div key={post.id}>
+              <Listings post={post} />
+
+              {profile.clerk_id === userId && (
+                <>
+                  <Link
+                    className="button"
+                    href={`/marketplace/${post.id}/edit`}
+                  >
+                    Edit Post
+                  </Link>
+
+                  <form action={deletePost}>
+                    <input type="hidden" name="id" value={post.id} />
+                    <button className="button">Delete Post</button>
+                  </form>
+                </>
+              )}
+            </div>
           ))}
         </div>
       </div>

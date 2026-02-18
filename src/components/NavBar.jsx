@@ -39,7 +39,8 @@ export default async function Navbar() {
       </SignedOut>
       <SignedIn>
         {user && <Link href={`/studentarea/${user.username}`}>Profile</Link>}
-        <Link href={"/marketplace"}>Marketplace</Link>&nbsp;|&nbsp;
+        <Link href={"/marketplace"}>Marketplace</Link>
+        &nbsp;|&nbsp;
         <SignOutButton className="button"></SignOutButton>
       </SignedIn>
 

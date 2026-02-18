@@ -2,6 +2,7 @@ import { db } from "@/utils/dbConnections";
 import Link from "next/link";
 import Image from "next/image";
 import { currentUser } from "@clerk/nextjs/server";
+import SubmitForm from "@/components/SubmitForm";
 
 export default async function MarketPlace() {
   //TODO: filter users so they can only see posts from students at the same university
@@ -39,7 +40,10 @@ export default async function MarketPlace() {
 
   return (
     <>
-      <h2>Marketplace</h2>
+      <h1>Marketplace</h1>
+      <div>
+        <SubmitForm />
+      </div>
       <div>
         {marketItems.rows.length === 0 && (
           <p>No posts yet from students at your university.</p>

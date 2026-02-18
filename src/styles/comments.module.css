@@ -1,0 +1,52 @@
+.commentDiv {
+  border-radius: 20px;
+  background-color: #d7fff1;
+  padding: 10px;
+}
+
+.commentForm {
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: #d7fff1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonDiv {
+  align-self: flex-end;
+}
+
+.textArea {
+  width: 100%;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.date {
+  border-bottom: solid 1px #285943;
+}
+
+.likeButton {
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.likeButton:active {
+  animation: press 100ms;
+}
+
+@keyframes press {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    bottom: 0;
+  }
+}

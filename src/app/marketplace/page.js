@@ -1,6 +1,7 @@
 import { db } from "@/utils/dbConnections";
 import Link from "next/link";
 import Image from "next/image";
+import { MessageSquare, Heart } from "lucide-react";
 
 export default async function MarketPlace() {
   const marketItems = await db.query(`SELECT uni_posts.*,
@@ -31,10 +32,21 @@ export default async function MarketPlace() {
                 <p>{marketItem.created_at.toLocaleString()}</p>
               </div>
               <div className="counts">
-                <p>❤️ {marketItem.likes_count}</p>
-                <p>💬 {marketItem.comment_count}</p>
+                <p className="flex flex-row justify-end">
+                  <Heart /> {marketItem.likes_count}
+                </p>
+                <p className="flex flex-row justify-end">
+                  <MessageSquare />
+                  {marketItem.comment_count}
+                </p>
               </div>
-              <Link className="button" href={`/marketplace/${marketItem.id}`} title="view listing">view</Link>
+              <Link
+                className="button"
+                href={`/marketplace/${marketItem.id}`}
+                title="view listing"
+              >
+                view
+              </Link>
             </article>
           );
         })}

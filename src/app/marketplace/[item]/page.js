@@ -45,7 +45,7 @@ export default async function ItemPage({ params }) {
     [item],
   );
   const data = query.rows;
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <h2>Item Page</h2>

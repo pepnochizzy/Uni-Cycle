@@ -11,6 +11,7 @@ import {
   UserButton,
   SignOutButton,
 } from "@clerk/nextjs";
+import { Nanum_Brush_Script } from "next/font/google";
 
 //homepage, market  place, profile page/sign out
 export default async function Navbar() {
@@ -27,30 +28,32 @@ export default async function Navbar() {
   }
 
   return (
-    // <nav className="flex place-content-between">
     <nav>
-      <Link href={"/"}>
-        <Image src={logo} alt="Uni-cycle logo" height={80} />
-      </Link>
-      <SignedOut>
-        <Link href={"/"}>Home</Link>&nbsp;|&nbsp;
-        <SignInButton className="button" />
-        <SignUpButton className="button" />
-      </SignedOut>
-      <SignedIn>
-        {user && <Link href={`/studentarea/${user.username}`}>Profile</Link>}
-        <Link href={"/marketplace"}>Marketplace</Link>
-        &nbsp;|&nbsp;
-        <SignOutButton className="button"></SignOutButton>
-      </SignedIn>
+      <div>
+        <Link href={"/"}>
+          <Image src={logo} alt="Uni-cycle logo" height={80} />
+        </Link>
+      </div>
+      <div>
+        <SignedOut>
+          <Link href={"/"}>Home</Link>&nbsp;|&nbsp;
+          <SignInButton className="button" />
+          <SignUpButton className="button" />
+        </SignedOut>
+        <SignedIn>
+          {user && <Link href={`/studentarea/${user.username}`}>Profile</Link>}&nbsp;|&nbsp;
+          <Link href={"/marketplace"}>Marketplace</Link>&nbsp;|&nbsp;
+          <SignOutButton className="button"></SignOutButton>
+        </SignedIn>
+      </div>
 
       {/* <div className="flex w-60"> */}
-      <div>
-        {/* <Link href={"/"} className="pr-4 border-r-2 border-r-[#77AF9C]"> */}
+      {/* <div> */}
+      {/* <Link href={"/"} className="pr-4 border-r-2 border-r-[#77AF9C]"> */}
+      {/* <Link href={"/marketplace"} className="pl-4 pr-4 border-r-2 border-r-[#77AF9C]"> */}
+      {/* <div className="pl-4"> */}
+      {/* </div> */}
 
-        {/* <Link href={"/marketplace"} className="pl-4 pr-4 border-r-2 border-r-[#77AF9C]"> */}
-        {/* <div className="pl-4"> */}
-      </div>
     </nav>
   );
 }

@@ -53,9 +53,11 @@ export default async function ItemPage({ params }) {
       <div>
         {data.map((marketItem) => {
           return (
-            <div key={marketItem.id} href={`/marketplace/${marketItem.id}`}>
+            <div key={marketItem.id}>
               <article>
-                <p className="font-bold">{marketItem.username}</p>
+                <Link href={`/marketplace/users/${marketItem.username}`}>
+                  <p className="font-bold">{marketItem.username}</p>
+                </Link>
                 <Image
                   src={marketItem.image}
                   alt={marketItem.post}

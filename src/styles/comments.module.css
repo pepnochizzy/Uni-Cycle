@@ -18,6 +18,17 @@
   align-self: flex-end;
 }
 
+.article {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 30px;
+  margin: 2% auto;
+  border-radius: 20px;
+}
+
 .textArea {
   width: 100%;
 }
@@ -28,6 +39,7 @@
 
 .date {
   border-bottom: solid 1px #285943;
+  margin-bottom: 15px;
 }
 
 .likeButton {

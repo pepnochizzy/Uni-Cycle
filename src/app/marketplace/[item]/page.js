@@ -59,8 +59,8 @@ export default async function ItemPage({ params }) {
                 <Image
                   src={marketItem.image}
                   alt={marketItem.post}
-                  width={1000}
-                  height={1000}
+                  width={500}
+                  height={500}
                 />
                 <p>{new Date(marketItem.created_at).toLocaleString()}</p>
                 <p className={style.date}>{marketItem.category}</p>

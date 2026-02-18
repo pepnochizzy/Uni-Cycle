@@ -2,6 +2,7 @@ import { db } from "@/utils/dbConnections";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import style from "@/styles/comments.module.css";
 
 export default async function Comments({ postId }) {
   async function createComment(formData) {
@@ -31,17 +32,28 @@ export default async function Comments({ postId }) {
     <>
       <div>
         {comments.map((comment) => (
-          <div key={comment.id}>
-            <p>{comment.username} commented: </p>
+          <div key={comment.id} className={style.commentDiv}>
+            <p className={style.username}>{comment.username}</p>
+            <p className={style.date}>
+              {new Date(comment.created_at).toLocaleString()}
+            </p>
             <p>{comment.comment}</p>
-            <p>{new Date(comment.created_at).toLocaleString()}</p>
           </div>
         ))}
 
-        <form action={createComment}>
+        <form action={createComment} className={style.commentForm}>
           <input type="hidden" name="post_id" value={postId} />
-          <textarea name="comment" placeholder="Comment here..." required />
-          <button type="submit">Comment</button>
+          <textarea
+            name="comment"
+            placeholder="Comment here..."
+            required
+            className={style.textArea}
+          />
+          <div className={style.buttonDiv}>
+            <button type="submit" className="button">
+              Post
+            </button>
+          </div>
         </form>
       </div>
     </>

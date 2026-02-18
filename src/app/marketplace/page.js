@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { currentUser } from "@clerk/nextjs/server";
 import SubmitForm from "@/components/SubmitForm";
+import { MessageSquare, Heart } from "lucide-react";
 
 export default async function MarketPlace() {
   //TODO: filter users so they can only see posts from students at the same university
@@ -61,19 +62,17 @@ export default async function MarketPlace() {
                 <div className="post-info">
                   <p>{marketItem.username}:</p>
                   <p>{marketItem.post}</p>
-                  <p>
-                    In category: {""}
-                    {marketItem.category}
-                  </p>
-                  <p>
-                    {" "}
-                    Posted at: {""}
-                    {marketItem.created_at.toLocaleString()}
-                  </p>
+                  <p>In category: {marketItem.category}</p>
+                  <p> Posted at:{marketItem.created_at.toLocaleString()}</p>
                 </div>
                 <div className="counts">
-                  <p>❤️ {marketItem.likes_count}</p>
-                  <p>💬 {marketItem.comment_count}</p>
+                  <p className="flex flex-row justify-end">
+                    <Heart /> {marketItem.likes_count}
+                  </p>
+                  <p className="flex flex-row justify-end">
+                    <MessageSquare />
+                    {marketItem.comment_count}
+                  </p>
                 </div>
                 <Link
                   className="button"

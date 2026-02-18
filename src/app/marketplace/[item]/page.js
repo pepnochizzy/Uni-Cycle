@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Comments from "@/components/Comments";
 import Likes from "@/components/Likes";
+import style from "@/styles/comments.module.css";
 
 // export default async function ItemPage({ params }) {
 //     const { item } = await params;
@@ -60,9 +61,9 @@ export default async function ItemPage({ params }) {
                   width={1000}
                   height={1000}
                 />
-                <p>{marketItem.post}</p>
-                <p>{marketItem.category}</p>
                 <p>{new Date(marketItem.created_at).toLocaleString()}</p>
+                <p className={style.date}>{marketItem.category}</p>
+                <p>{marketItem.post}</p>
 
                 <Likes
                   postId={marketItem.id}

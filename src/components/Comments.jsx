@@ -3,6 +3,7 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import style from "@/styles/comments.module.css";
+import { CommentForm } from "./CommentsForm";
 
 export default async function Comments({ postId }) {
   async function createComment(formData) {
@@ -11,14 +12,14 @@ export default async function Comments({ postId }) {
     const comment = formData.get("comment");
     const submittedpostId = formData.get("post_id");
     const { userId } = await auth();
-
+    const parentId = formData.get("parent_Id");
     if (!userId) {
       redirect("/sign-in");
     }
 
     await db.query(
-      `INSERT INTO uni_comments(comment, clerk_id, post_id) VALUES($1, $2, $3)`,
-      [comment, userId, submittedpostId],
+      `INSERT INTO uni_comments(comment, clerk_id, post_id, parent_id) VALUES($1, $2, $3, $4)`,
+      [comment, userId, submittedpostId, parentId],
     );
     revalidatePath(`/marketplace/${postId}`);
   }
@@ -38,6 +39,11 @@ export default async function Comments({ postId }) {
               {new Date(comment.created_at).toLocaleString()}
             </p>
             <p>{comment.comment}</p>
+            <CommentForm
+              parentId={comment.id}
+              action={createComment}
+              postId={postId}
+            />
           </div>
         ))}
 

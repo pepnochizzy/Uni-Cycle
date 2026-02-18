@@ -15,7 +15,7 @@ export default async function MarketPlace() {
 
   return (
     <>
-      <h2>Marketplace</h2>
+      <h1>Marketplace</h1>
       <div>
         <SubmitForm />
       </div>

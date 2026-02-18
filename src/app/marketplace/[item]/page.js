@@ -55,7 +55,7 @@ export default async function ItemPage({ params }) {
           return (
             <div key={marketItem.id} href={`/marketplace/${marketItem.id}`}>
               <article>
-                <p>Posted by: {marketItem.username}</p>
+                <p className="font-bold">{marketItem.username}</p>
                 <Image
                   src={marketItem.image}
                   alt={marketItem.post}

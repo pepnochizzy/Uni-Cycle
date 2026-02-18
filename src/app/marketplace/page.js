@@ -4,6 +4,7 @@ import Image from "next/image";
 import { currentUser } from "@clerk/nextjs/server";
 import SubmitForm from "@/components/SubmitForm";
 import { MessageSquare, Heart } from "lucide-react";
+import style from "@/styles/comments.module.css";
 
 export default async function MarketPlace() {
   //TODO: filter users so they can only see posts from students at the same university
@@ -45,34 +46,47 @@ export default async function MarketPlace() {
           marketItems.rows.map((marketItem) => {
             return (
               <article key={marketItem.id}>
+                <Link href={`marketplace/users/${marketItem.username}`}>
+                  <p className="font-bold">{marketItem.username}</p>
+                </Link>
+                <p>In category: {marketItem.category}</p>
                 <Image
                   src={marketItem.image}
                   alt={marketItem.post}
                   width={1000}
                   height={1000}
+                  style={{
+                    clipPath: "inset(0px 80px 100px 0px round 20%)",
+                    width: "100%",
+                  }}
                 />
+                <p className={style.date}>
+                  {" "}
+                  Posted: {marketItem.created_at.toLocaleString()}
+                </p>
                 <div className="post-info">
-                  <p>{marketItem.username}:</p>
                   <p>{marketItem.post}</p>
-                  <p>In category: {marketItem.category}</p>
-                  <p> Posted at:{marketItem.created_at.toLocaleString()}</p>
                 </div>
-                <div className="counts">
-                  <p className="flex flex-row justify-end">
-                    <Heart /> {marketItem.likes_count}
-                  </p>
-                  <p className="flex flex-row justify-end">
-                    <MessageSquare />
-                    {marketItem.comment_count}
-                  </p>
+                <div className={style.marketButtonDiv}>
+                  <div className="flex flex-row gap-5">
+                    <p className="flex flex-row justify-start">
+                      <Heart /> {marketItem.likes_count}
+                    </p>
+                    <p className="flex flex-row justify-end">
+                      <MessageSquare />
+                      {marketItem.comment_count}
+                    </p>
+                  </div>
+                  <div className={style.buttonDiv}>
+                    <Link
+                      className="button"
+                      href={`/marketplace/${marketItem.id}`}
+                      title="view listing"
+                    >
+                      view
+                    </Link>
+                  </div>
                 </div>
-                <Link
-                  className="button"
-                  href={`/marketplace/${marketItem.id}`}
-                  title="view listing"
-                >
-                  view
-                </Link>
               </article>
             );
           })}

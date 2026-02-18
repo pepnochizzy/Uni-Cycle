@@ -53,11 +53,10 @@ export default async function MarketPlace() {
                 <Image
                   src={marketItem.image}
                   alt={marketItem.post}
-                  width={1000}
-                  height={1000}
+                  width={300}
+                  height={300}
                   style={{
-                    clipPath: "inset(0px 80px 100px 0px round 20%)",
-                    width: "100%",
+                    clipPath: "inset(0 20% 40% 0 round 15%)",
                   }}
                 />
                 <p className={style.date}>

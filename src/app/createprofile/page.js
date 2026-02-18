@@ -41,7 +41,7 @@ export default async function CreateProfilePage() {
   }
   return (
     <>
-      <h2>Registration (Final step)</h2>
+      <h1>Registration (Final step)</h1>
       <form action={handleCreateProfile}>
         <label htmlFor="username">Your user name: </label>
         <input type="text" name="username" maxLength={128} required />

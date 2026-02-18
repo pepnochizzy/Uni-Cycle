@@ -146,18 +146,19 @@ article .button {
   margin: 20px;
 }
 
-
-
-
 hr {
   margin-bottom: 50px;
 }
 
 footer {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 125%;
+  font-size: 120%;
   padding: 120px 10px 100px 10px;
   letter-spacing: 1px;
+}
+
+footer p {
+  text-align: center;
 }
 
 /* for testing remove if necessary */

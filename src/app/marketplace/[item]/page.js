@@ -40,8 +40,8 @@ export default async function ItemPage({ params }) {
     `SELECT 
      uni_posts.*,
      (SELECT COUNT(*) FROM uni_likes WHERE post_id = uni_posts.id) AS likes_count,
-     (SELECT COUNT(*) FROM uni_comments WHERE post_id = uni_posts.id) AS comment_count
-   FROM uni_posts
+     (SELECT COUNT(*) FROM uni_comments WHERE post_id = uni_posts.id) AS comment_count, uni_users.username
+   FROM uni_posts JOIN uni_users ON uni_posts.clerk_id = uni_users.clerk_id
    WHERE uni_posts.id = $1`,
     [item],
   );
@@ -55,6 +55,7 @@ export default async function ItemPage({ params }) {
           return (
             <div key={marketItem.id} href={`/marketplace/${marketItem.id}`}>
               <article>
+                <p>Posted by: {marketItem.username}</p>
                 <Image
                   src={marketItem.image}
                   alt={marketItem.post}

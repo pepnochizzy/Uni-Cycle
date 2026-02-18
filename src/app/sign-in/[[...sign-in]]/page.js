@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function SignInPage() {
     return (
         <>
-            <h2>Login</h2>
+            <h1>Login</h1>
             <div className="clerk-auth">
                 <SignIn />
             </div>

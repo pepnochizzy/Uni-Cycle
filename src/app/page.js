@@ -1,5 +1,4 @@
 // root / homepage
-import SubmitForm from "@/components/SubmitForm";
 import AboutUsOne from "@/components/AboutUsOne";
 import {
   UserButton,
@@ -19,7 +18,6 @@ export default function Home() {
         <SignedIn>
           <UserButton />
         </SignedIn>
-        <SubmitForm />
       </div>
       <AboutUsOne />
     </>

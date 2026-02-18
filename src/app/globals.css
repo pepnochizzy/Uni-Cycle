@@ -86,6 +86,10 @@ select {
   padding: 20px;
 }
 
+.my-form p {
+  margin: 0 0 30px 5px;
+}
+
 .button {
   display: inline-block;
   border: 0;

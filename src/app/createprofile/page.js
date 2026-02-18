@@ -42,7 +42,7 @@ export default async function CreateProfilePage() {
   return (
     <>
       <h1>Registration (Final step)</h1>
-      <form action={handleCreateProfile}>
+      <form className="my-form" action={handleCreateProfile}>
         <label htmlFor="username">Your user name: </label>
         <input type="text" name="username" maxLength={128} required />
         <label htmlFor="firstname">Your first name:</label>
@@ -59,7 +59,7 @@ export default async function CreateProfilePage() {
             </option>
           ))}
         </select>
-        <button type="submit">Submit profile settings and finish</button>
+        <button className="button" type="submit">Finish</button>
       </form>
     </>
   );

@@ -28,14 +28,6 @@ export default async function MarketPlace() {
     [userUniversity],
   );
 
-  console.log("MARKETPLACE DEBUG", {
-    userId,
-    userRows,
-    userUniversity,
-    postCount: marketItems.rows.length,
-    posts: marketItems.rows,
-  });
-
   // const parsedMarketItems = marketItems.rows;
   // console.log(marketItems);
 

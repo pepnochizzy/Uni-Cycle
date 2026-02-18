@@ -2,6 +2,8 @@ import { db } from "@/utils/dbConnections";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import { Heart } from "lucide-react";
+import style from "@/styles/comments.module.css";
 
 export default function Likes({ postId, likesCount }) {
   async function likePost() {
@@ -25,7 +27,9 @@ export default function Likes({ postId, likesCount }) {
   return (
     <>
       <form action={likePost}>
-        <button type="submit">❤️ {likesCount}</button>
+        <button type="submit" className={style.likeButton}>
+          <Heart /> {likesCount}
+        </button>
       </form>
     </>
   );

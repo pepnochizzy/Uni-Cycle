@@ -6,8 +6,8 @@ export default function AboutUsOne() {
     <>
       <EnterAnimate>
         <div className={AboutUsStyles.about_us_1}>
-          <h2>Uni-Cycle</h2>
-          <h3>About us:</h3>
+          <h1>Uni-Cycle</h1>
+          <h2>About us:</h2>
           <p>
             Have you ever set up your uni dorm room for your studies and either
             had too many items you didn&apos;t need ... or needed items that you

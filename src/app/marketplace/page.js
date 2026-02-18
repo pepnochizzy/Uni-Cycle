@@ -5,15 +5,20 @@ import { currentUser } from "@clerk/nextjs/server";
 import SubmitForm from "@/components/SubmitForm";
 import { MessageSquare, Heart } from "lucide-react";
 
-export default async function MarketPlace() {
+export default async function MarketPlace({ searchParams }) {
   //TODO: filter users so they can only see posts from students at the same university
 
   const user = await currentUser();
   const userId = user?.id;
+  const searchSort = await searchParams;
   const { rows: userRows } = await db.query(
     `SELECT university FROM uni_users WHERE clerk_id = $1`,
     [userId],
   );
+
+  //! Sorting types: By date created (uses id), by character (sortof alphabetically), by reactions (likes)
+  let orderDir = "DESC";
+  let orderBy = "uni_posts.id";
 
   const userUniversity = userRows[0]?.university;
 
@@ -27,6 +32,25 @@ export default async function MarketPlace() {
      ORDER BY uni_posts.created_at DESC`,
     [userUniversity],
   );
+
+  //========================================
+  //! These conditionals *should* read what's written on the search parameters, and then enact a behaviour by affecting orderDir and orderBy, which changes the SQL select query above to specify *how* to order and *which direction*
+
+  if (searchSort.sort === "desc") {
+    orderBy = "uni_posts.id";
+    orderDir = "DESC";
+  } else if (searchSort.sort === "asc") {
+    orderBy = "uni_posts.id";
+    orderDir = "ASC";
+  } else if (searchSort.sort === "reactdesc") {
+    orderBy = "COUNT(uni_likes.post_id)";
+    orderDir = "DESC";
+  } else if (searchSort.sort === "reactasc") {
+    orderBy = "COUNT(uni_likes.post_id)";
+    orderDir = "ASC";
+  }
+
+  //========================================
 
   console.log("MARKETPLACE DEBUG", {
     userId,
@@ -44,6 +68,12 @@ export default async function MarketPlace() {
       <h1>Marketplace</h1>
       <div>
         <SubmitForm />
+      </div>
+      <div>
+        <Link href={`/marketplace/?sort=asc`}>Oldest to Latest</Link>
+        <Link href={`/marketplace/?sort=desc`}>Latest to Oldest</Link>
+        <Link href={`/marketplace/?sort=reactdesc`}>Most votes</Link>
+        <Link href={`/marketplace/?sort=reactasc`}>Least votes</Link>
       </div>
       <div>
         {marketItems.rows.length === 0 && (

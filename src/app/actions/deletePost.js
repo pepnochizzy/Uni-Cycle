@@ -19,5 +19,5 @@ export async function deletePost(formData) {
   }
 
   await db.query(`DELETE FROM uni_posts WHERE id = $1`, [id]);
-  redirect(`/marketplace}`);
+  redirect(`/marketplace`);
 }

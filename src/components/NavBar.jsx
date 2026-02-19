@@ -31,7 +31,12 @@ export default async function Navbar() {
     <nav>
       <div>
         <Link href={"/"}>
-          <Image src={logo} alt="Uni-cycle logo" height={80} />
+          <Image
+            src={logo}
+            alt="Uni-cycle logo"
+            height={80}
+            aria-label="Navigate to Homepage"
+          />
         </Link>
         {/* <SignedIn>
           <UserButton />
@@ -44,7 +49,8 @@ export default async function Navbar() {
           <SignUpButton className="button" />
         </SignedOut>
         <SignedIn>
-          {user && <Link href={`/studentarea/${user.username}`}>Profile</Link>}&nbsp;|&nbsp;
+          {user && <Link href={`/studentarea/${user.username}`}>Profile</Link>}
+          &nbsp;|&nbsp;
           <Link href={"/marketplace"}>Marketplace</Link>&nbsp;|&nbsp;
           <SignOutButton className="button"></SignOutButton>
         </SignedIn>

@@ -94,3 +94,31 @@ Clerk docs: https://clerk.com/docs/nextjs/getting-started/quickstart
 Lucide docs: https://lucide.dev/icons/
 Radix docs (component removed): https://www.radix-ui.com/primitives/docs/components/dropdown-menu
 Mdn for small checks on syntax
+
+## Uli's reflection
+
+## Lessons learned
+
+### Image Buckets
+
+We wanted users to be able to upload their own images from their local machine. I did some previous research on Storage Buckets in Supabase for a previous assignment but wasn't able to implement it then. During the planning sessions I did some additional research and managed to set up a storage bucket within supabase. Important here is that while the bucket is public, we still had to add policies to Select and Insert to allow the SubmitForm to upload and the marketplace to display the images alongside the post.
+
+We also had to install the supabase package and it was the first time for me to user server and client supabase functions. While it took some time to make sure the code was working it was a pretty straight forward setup, as documentation was clear and several youtube videos are available.
+
+Important as well is to add the image hist to the config file otherwise the images will not be displayed.
+
+### Displaying posts by universities only
+
+One aim of the page was that students are only able to see posts of students going to the same university. We managed this by adapting the sequel on the marketplace page and using currentUser. There were some initial issues with the setup as i initially used auth() but the server wasn't able to fetch the user id before the render so assumed that there were no posts at this university. However, with currentUser and await this was then possible.
+
+### Filtering in Next.js
+
+While we did sorting in previous workshops and assignments, I never actually created a filter function in Next.js. It was quite difficult as we had to establish which function was client side and which had to go in a server component. The actual filter runs in the browser and handles the changes when the user clicks the dropdown. This then updates the URL. However the Filter component does not have access to the database so is actually unable to filter the content of the page. This had to happen within the route itself. It reads the URL it has been given by the Filter component, completes the action and re-renders the page.
+
+Next.js is doing this with router.push(URL) and searchParams within the client. I also had an issue where internal workings were displayed within the URL but managed to do a work around with URLSearchPAram(window.location.search). This then resulted in the correct URL being shown in the browser. It took some time but in the end we were able to filter by category and sort by date/category
+
+### Resources
+
+https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#search-params
+https://nextjs.org/docs/app/building-your-application/data-fetching/fetching
+https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams

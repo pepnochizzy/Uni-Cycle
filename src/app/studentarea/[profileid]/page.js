@@ -10,6 +10,7 @@ import Link from "next/link";
 import { currentUser } from "@clerk/nextjs/server";
 import { deletePost } from "@/app/actions/deletePost";
 import EditProfileModal from "@/components/EditProfileModal";
+import FormModal from "@/components/Modal";
 
 export default async function StudentArea({ params }) {
   const user = await currentUser();
@@ -67,7 +68,7 @@ export default async function StudentArea({ params }) {
 
       <div className="flex flex-col">
         <div>
-          <SubmitForm />
+          <FormModal />
         </div>
         <h2 className="font-bold">{profile.username}&apos;s Listings</h2>
         {posts.length === 0 && <p>No listings yet</p>}

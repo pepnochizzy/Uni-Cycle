@@ -65,7 +65,7 @@ export default async function MarketPlace(props) {
 
   return (
     <>
-      <h1>Marketplace</h1>
+      <h1 className="font-bold">Marketplace</h1>
       <Filters searchParams={searchParams} />
       <div>
         <SubmitForm />

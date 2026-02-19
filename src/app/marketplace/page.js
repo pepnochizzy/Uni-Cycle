@@ -6,6 +6,7 @@ import SubmitForm from "@/components/SubmitForm";
 import { MessageSquare, Heart } from "lucide-react";
 import style from "@/styles/comments.module.css";
 import Filters from "@/components/Filter";
+import FormModal from "@/components/Modal";
 
 export default async function MarketPlace(props) {
   const searchParams = await props.searchParams;
@@ -68,7 +69,7 @@ export default async function MarketPlace(props) {
       <h1 className="font-bold">Marketplace</h1>
       <Filters searchParams={searchParams} />
       <div>
-        <SubmitForm />
+        <FormModal />
       </div>
       <div>
         {items.length === 0 && (

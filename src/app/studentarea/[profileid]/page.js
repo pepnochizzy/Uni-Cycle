@@ -9,6 +9,7 @@ import SubmitForm from "@/components/SubmitForm";
 import Link from "next/link";
 import { currentUser } from "@clerk/nextjs/server";
 import { deletePost } from "@/app/actions/deletePost";
+import EditProfileModal from "@/components/EditProfileModal";
 
 export default async function StudentArea({ params }) {
   const user = await currentUser();
@@ -27,6 +28,10 @@ export default async function StudentArea({ params }) {
 
   const profile = profileQuery.rows[0];
   console.log(profile);
+
+  const { rows: universities } = await db.query(
+    `SELECT id, university FROM university ORDER BY university ASC`,
+  );
 
   const postQuery = await db.query(
     `SELECT uni_posts.id, uni_posts.post, uni_posts.category, uni_posts.image, uni_posts.created_at, uni_users.username, (SELECT COUNT(*) FROM uni_likes WHERE uni_likes.post_id=uni_posts.id) AS likes_count, (SELECT COUNT(*) FROM uni_comments WHERE uni_comments.post_id = uni_posts.id) AS comment_count FROM uni_posts JOIN uni_users ON uni_posts.clerk_id = uni_users.clerk_id WHERE uni_posts.clerk_id = $1 ORDER BY uni_posts.created_at DESC`,
@@ -55,6 +60,11 @@ export default async function StudentArea({ params }) {
           </div>
         </div>
       </div>
+
+      {profile.clerk_id === userId && (
+        <EditProfileModal profile={profile} universities={universities} />
+      )}
+
       <div className="flex flex-col">
         <div>
           <SubmitForm />
@@ -67,7 +77,7 @@ export default async function StudentArea({ params }) {
               <Listings post={post} />
 
               {profile.clerk_id === userId && (
-                <>
+                <div className="flex gap-8 justify-between">
                   <Link
                     className="button"
                     href={`/marketplace/${post.id}/edit`}
@@ -79,7 +89,7 @@ export default async function StudentArea({ params }) {
                     <input type="hidden" name="id" value={post.id} />
                     <button className="button">Delete Post</button>
                   </form>
-                </>
+                </div>
               )}
             </div>
           ))}

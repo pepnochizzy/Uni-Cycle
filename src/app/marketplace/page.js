@@ -5,9 +5,13 @@ import { currentUser } from "@clerk/nextjs/server";
 import SubmitForm from "@/components/SubmitForm";
 import { MessageSquare, Heart } from "lucide-react";
 import style from "@/styles/comments.module.css";
+import Filters from "@/components/Filter";
 
-export default async function MarketPlace() {
-  //TODO: filter users so they can only see posts from students at the same university
+export default async function MarketPlace(props) {
+  const searchParams = await props.searchParams;
+
+  const sort = searchParams.sort || "";
+  const categoryFilter = searchParams.category || "";
 
   const user = await currentUser();
   const userId = user?.id;
@@ -29,21 +33,49 @@ export default async function MarketPlace() {
     [userUniversity],
   );
 
+  let items = marketItems.rows;
+
+  //TODO: Convert date strings to Date objects for sorting
+
+  items = items.map((item) => ({
+    ...item,
+    created_at: new Date(item.created_at),
+  }));
+
+  //TODO: Filtering
+
+  if (categoryFilter) {
+    items = items.filter((item) => item.category === categoryFilter);
+  }
+
+  //TODO: Sorting
+
+  if (sort === "cat_asc") {
+    items.sort((a, b) => a.category.localeCompare(b.category));
+  } else if (sort === "cat_desc") {
+    items.sort((a, b) => b.category.localeCompare(a.category));
+  } else if (sort === "date_asc") {
+    items.sort((a, b) => a.created_at - b.created_at);
+  } else if (sort === "date_desc") {
+    items.sort((a, b) => b.created_at - a.created_at);
+  }
+
   // const parsedMarketItems = marketItems.rows;
   // console.log(marketItems);
 
   return (
     <>
       <h1>Marketplace</h1>
+      <Filters searchParams={searchParams} />
       <div>
         <SubmitForm />
       </div>
       <div>
-        {marketItems.rows.length === 0 && (
+        {items.length === 0 && (
           <p>No posts yet from students at your university.</p>
         )}
-        {marketItems.rows.length > 0 &&
-          marketItems.rows.map((marketItem) => {
+        {items.length > 0 &&
+          items.map((marketItem) => {
             return (
               <article key={marketItem.id}>
                 <Link href={`marketplace/users/${marketItem.username}`}>

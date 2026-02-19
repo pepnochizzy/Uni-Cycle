@@ -148,3 +148,27 @@ Once development began, the first steps were to configure the Next project and e
 https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#search-params
 https://nextjs.org/docs/app/building-your-application/data-fetching/fetching
 https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+
+
+
+## Andrew's reflection
+
+### What went well
+- Created the front-end global css styling for the majority of the app
+- Created the individual item dynamic page for marketplace posts
+- Implemented the initial clerk buttons and components using <SignedIn> <SignedOut> <UserButton> etc.
+- Created Header and Footer components and nested the NavBar component
+- Implemented a global 'return to top' button component
+- Worked on final css fixes and modifications
+- I successfully worked as part of a team using Git / Git branching without too many issues... just the occasional code conflict which was successfully resolved.
+- This was a great team to work with, there were no conflicts and I would happily work with all team members again. Overall, I think the project was a great success although there were some stretch goals that we would have liked to have included given more time.
+
+### Any struggles?
+- There were some issues with mixing Tailwind with traditional (global) css and css modules, a better approach, in my opinion, would have been to choose one method and stick with it. Mixing styling methods sometimes made it hard to locate particular styles that needed changing as some global styles applied to elements that had css modules also.
+- Communication was good while some technical issues included my loss of laptop sound on more than one occasion meaning I could not hear team members speaking.
+
+### Resources
+- Previous software development course code involving dynamic pages for revision purposes and examples.
+- W3 css - 'object-fit' reference for marketplace item images.
+
+

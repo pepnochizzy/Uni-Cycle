@@ -49,14 +49,6 @@ export default async function Navbar() {
           <SignOutButton className="button"></SignOutButton>
         </SignedIn>
       </div>
-
-      {/* <div className="flex w-60"> */}
-      {/* <div> */}
-      {/* <Link href={"/"} className="pr-4 border-r-2 border-r-[#77AF9C]"> */}
-      {/* <Link href={"/marketplace"} className="pl-4 pr-4 border-r-2 border-r-[#77AF9C]"> */}
-      {/* <div className="pl-4"> */}
-      {/* </div> */}
-
     </nav>
   );
 }

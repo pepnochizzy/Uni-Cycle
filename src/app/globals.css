@@ -189,12 +189,13 @@ nav div:first-of-type {
   gap: 50px;
 }
 
-.cl-avatarBox img,
-.cl-avatarBox,
-.cl-button {
+.cl-avatarBox {
   width: 50px !important;
   height: 50px !important;
 }
+
+/* .cl-button */
+/* .cl-avatarBox */
 
 /* colour pallette */
 /* #D7FFF1

@@ -16,9 +16,6 @@ export default function Home() {
         <SignedOut>
           <div className="sign-buttons"></div>
         </SignedOut>
-        {/* <SignedIn>
-          <UserButton />
-        </SignedIn> */}
       </div>
       <AboutUsOne />
       <HomepageFeed />

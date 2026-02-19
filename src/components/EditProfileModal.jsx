@@ -18,13 +18,15 @@ export default function EditProfileModal({ profile, universities }) {
         <div>
           {" "}
           <EditProfileForm profile={profile} universities={universities} />
-          <button
-            className="button flex-1 mb-3"
-            onClick={() => setOpen(false)}
-            type="button"
-          >
-            Cancel
-          </button>
+          <div className="flex justify-center mt-8 new-listing">
+            <button
+              className="button"
+              onClick={() => setOpen(false)}
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       )}
     </div>

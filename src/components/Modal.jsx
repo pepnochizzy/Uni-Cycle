@@ -17,9 +17,11 @@ export default function FormModal() {
         <div>
           <div>
             <SubmitForm />
-            <button onClick={() => setOpen(false)} className="button">
-              Exit
-            </button>
+            <div className="flex justify-center mt-8 new-listing">
+              <button onClick={() => setOpen(false)} className="button">
+                Cancel
+              </button>
+            </div>
           </div>
         </div>
       )}

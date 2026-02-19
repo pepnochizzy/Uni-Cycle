@@ -19,5 +19,10 @@ export default async function EditPost({ params }) {
     return <p>You are not allowed to edit this post.</p>;
   }
 
-  return <EditForm post={post} updatePost={updatePost} />;
+  return (
+    <>
+      <h1 className="font-bold">Edit your post</h1>
+      <EditForm post={post} updatePost={updatePost} />
+    </>
+  );
 }

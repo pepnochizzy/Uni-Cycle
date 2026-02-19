@@ -33,6 +33,9 @@ export default async function Navbar() {
         <Link href={"/"}>
           <Image src={logo} alt="Uni-cycle logo" height={80} />
         </Link>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
       <div>
         <SignedOut>

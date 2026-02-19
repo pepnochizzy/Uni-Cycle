@@ -95,3 +95,28 @@
     bottom: 0;
   }
 }
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+  grid-template-rows: auto;
+  align-content: start;
+  justify-content: center;
+  padding-bottom: 80px;
+  margin-top: 20px;
+}
+
+@media (min-width: 1024px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .postSection {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+  }
+}

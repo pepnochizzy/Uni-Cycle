@@ -74,53 +74,55 @@ export default async function MarketPlace(props) {
         {items.length === 0 && (
           <p>No posts yet from students at your university.</p>
         )}
-        {items.length > 0 &&
-          items.map((marketItem) => {
-            return (
-              <article key={marketItem.id}>
-                <Link href={`marketplace/users/${marketItem.username}`}>
-                  <p className="font-bold">{marketItem.username}</p>
-                </Link>
-                <p>In category: {marketItem.category}</p>
-                <Image
-                  src={marketItem.image}
-                  alt={marketItem.post}
-                  width={300}
-                  height={300}
-                  style={{
-                    clipPath: "inset(0 20% 40% 0 round 15%)",
-                  }}
-                />
-                <p className={style.date}>
-                  {" "}
-                  Posted: {marketItem.created_at.toLocaleString()}
-                </p>
-                <div className="post-info">
-                  <p>{marketItem.post}</p>
-                </div>
-                <div className={style.marketButtonDiv}>
-                  <div className="flex flex-row gap-5">
-                    <p className="flex flex-row justify-start">
-                      <Heart /> {marketItem.likes_count}
-                    </p>
-                    <p className="flex flex-row justify-end">
-                      <MessageSquare />
-                      {marketItem.comment_count}
-                    </p>
+        <div className={style.gridContainer}>
+          {items.length > 0 &&
+            items.map((marketItem) => {
+              return (
+                <article key={marketItem.id}>
+                  <Link href={`marketplace/users/${marketItem.username}`}>
+                    <p className="font-bold">{marketItem.username}</p>
+                  </Link>
+                  <p>In category: {marketItem.category}</p>
+                  <Image
+                    src={marketItem.image}
+                    alt={marketItem.post}
+                    width={300}
+                    height={300}
+                    style={{
+                      clipPath: "inset(0 20% 40% 0 round 15%)",
+                    }}
+                  />
+                  <p className={style.date}>
+                    {" "}
+                    Posted: {marketItem.created_at.toLocaleString()}
+                  </p>
+                  <div className="post-info">
+                    <p>{marketItem.post}</p>
                   </div>
-                  <div className={style.buttonDiv}>
-                    <Link
-                      className="button"
-                      href={`/marketplace/${marketItem.id}`}
-                      title="view listing"
-                    >
-                      view
-                    </Link>
+                  <div className={style.marketButtonDiv}>
+                    <div className="flex flex-row gap-5">
+                      <p className="flex flex-row justify-start">
+                        <Heart /> {marketItem.likes_count}
+                      </p>
+                      <p className="flex flex-row justify-end">
+                        <MessageSquare />
+                        {marketItem.comment_count}
+                      </p>
+                    </div>
+                    <div className={style.buttonDiv}>
+                      <Link
+                        className="button"
+                        href={`/marketplace/${marketItem.id}`}
+                        title="view listing"
+                      >
+                        view
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              </article>
-            );
-          })}
+                </article>
+              );
+            })}
+        </div>
       </div>
     </>
   );

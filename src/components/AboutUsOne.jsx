@@ -1,12 +1,12 @@
-import AboutUsStyles from "./AboutUs.module.css";
+import AboutUsStyles from "@/styles/AboutUs.module.css";
 import EnterAnimate from "./EnterAnimate";
 
 export default function AboutUsOne() {
   return (
     <>
       <EnterAnimate>
-        <div className={AboutUsStyles.about_us_1}>
-          <h1 className="font-bold">Uni-Cycle</h1>
+        <h1 className="font-bold">Uni-Cycle</h1>
+        <div className={AboutUsStyles.aboutus_top}>
           <h2>About us</h2>
           <p>
             Have you ever set up your uni dorm room for your studies and either
@@ -18,13 +18,16 @@ export default function AboutUsOne() {
         </div>
       </EnterAnimate>
       <EnterAnimate>
-        <div className={AboutUsStyles.about_us_1}>
+        <div>
           <p>Consider our marketplace service!</p>
           <h2>Uni-Cycle</h2>
         </div>
       </EnterAnimate>
       <EnterAnimate>
-        <ul style={{ listStyleType: "disc" }}>
+        <ul
+          style={{ listStyleType: "disc" }}
+          className={AboutUsStyles.list_class}
+        >
           <li>
             Our app gives students the capability to manage their inventory by
             establishing an easy to use platform to facilitate the exchange of

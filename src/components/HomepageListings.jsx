@@ -11,17 +11,19 @@ export default function Listings({ post }) {
         <div>
           <p>Category: {post.category}</p>
         </div>
-        {post.image && (
-          <Image
-            src={post.image}
-            alt={post.post || "Listing Image"}
-            width={300}
-            height={300}
-            style={{
-              clipPath: "inset(5% 20% 40% 0 round 15%)",
-            }}
-          />
-        )}
+        <div className="list-img">
+          {post.image && (
+            <Image
+              src={post.image}
+              alt={post.post || "Listing Image"}
+              width={300}
+              height={300}
+            // style={{
+            //   clipPath: "inset(5% 20% 40% 0 round 15%)",
+            // }}
+            />
+          )}
+        </div>
         <div>
           <p className={style.date}>
             Posted at: {new Date(post.created_at).toLocaleString()}

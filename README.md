@@ -117,7 +117,7 @@ While we did sorting in previous workshops and assignments, I never actually cre
 
 Next.js is doing this with router.push(URL) and searchParams within the client. I also had an issue where internal workings were displayed within the URL but managed to do a work around with URLSearchPAram(window.location.search). This then resulted in the correct URL being shown in the browser. It took some time but in the end we were able to filter by category and sort by date/category
 
-##Arron Burgess' personal reflections
+## Arron Burgess' personal reflections
 
 ### App premise
 
@@ -149,11 +149,10 @@ https://nextjs.org/docs/app/building-your-application/routing/linking-and-naviga
 https://nextjs.org/docs/app/building-your-application/data-fetching/fetching
 https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
 
-
-
 ## Andrew's reflection
 
 ### What went well
+
 - Created the front-end global css styling for the majority of the app
 - Created the individual item dynamic page for marketplace posts
 - Implemented the initial clerk buttons and components using <SignedIn> <SignedOut> <UserButton> etc.
@@ -164,11 +163,11 @@ https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
 - This was a great team to work with, there were no conflicts and I would happily work with all team members again. Overall, I think the project was a great success although there were some stretch goals that we would have liked to have included given more time.
 
 ### Any struggles?
+
 - There were some issues with mixing Tailwind with traditional (global) css and css modules, a better approach, in my opinion, would have been to choose one method and stick with it. Mixing styling methods sometimes made it hard to locate particular styles that needed changing as some global styles applied to elements that had css modules also.
 - Communication was good while some technical issues included my loss of laptop sound on more than one occasion meaning I could not hear team members speaking.
 
 ### Resources
+
 - Previous software development course code involving dynamic pages for revision purposes and examples.
 - W3 css - 'object-fit' reference for marketplace item images.
-
-

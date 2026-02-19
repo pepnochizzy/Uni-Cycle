@@ -24,7 +24,7 @@
 
 .aboutus_top {
   padding: 2rem;
-  margin-right: 48rem;
+  width: 65%;
   margin-bottom: 6rem;
   background-color: white;
   border-radius: 20px;
@@ -32,7 +32,7 @@
 
 .list_class {
   padding: 0.5rem;
-  margin-right: 48rem;
+  width: 65%;
   background-color: white;
   border-radius: 20px;
   li {

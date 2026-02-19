@@ -183,6 +183,19 @@ footer p {
   background-color: #555;
 }
 
+nav div:first-of-type {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.cl-avatarBox img,
+.cl-avatarBox,
+.cl-button {
+  width: 50px !important;
+  height: 50px !important;
+}
+
 /* colour pallette */
 /* #D7FFF1
 #AAFCB8

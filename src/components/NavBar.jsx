@@ -33,9 +33,9 @@ export default async function Navbar() {
         <Link href={"/"}>
           <Image src={logo} alt="Uni-cycle logo" height={80} />
         </Link>
-        <SignedIn>
+        {/* <SignedIn>
           <UserButton />
-        </SignedIn>
+        </SignedIn> */}
       </div>
       <div>
         <Link href={"/"}>Home</Link>&nbsp;|&nbsp;

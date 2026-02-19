@@ -83,15 +83,17 @@ export default async function MarketPlace(props) {
                     <p className="font-bold">{marketItem.username}</p>
                   </Link>
                   <p>In category: {marketItem.category}</p>
-                  <Image
-                    src={marketItem.image}
-                    alt={marketItem.post}
-                    width={300}
-                    height={300}
-                    style={{
-                      clipPath: "inset(0 20% 40% 0 round 15%)",
-                    }}
-                  />
+                  <div className="list-img">
+                    <Image
+                      src={marketItem.image}
+                      alt={marketItem.post}
+                      width={300}
+                      height={300}
+                    // style={{
+                    //   clipPath: "inset(0 20% 40% 0 round 15%)",
+                    // }}
+                    />
+                  </div>
                   <p className={style.date}>
                     {" "}
                     Posted: {marketItem.created_at.toLocaleString()}

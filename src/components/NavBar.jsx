@@ -38,7 +38,9 @@ export default async function Navbar() {
             aria-label="Navigate to Homepage"
           />
         </Link>
-        <SignedIn></SignedIn>
+        {/* <SignedIn>
+          <UserButton />
+        </SignedIn> */}
       </div>
       <div>
         <Link href={"/"}>Home</Link>&nbsp;|&nbsp;

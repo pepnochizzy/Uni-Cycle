@@ -63,6 +63,29 @@
   align-items: end;
 }
 
+.replyDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonSmall {
+  border: 0;
+  padding: 8px 10px;
+  color: #fff;
+  background-color: #77af9c;
+  border-radius: 10px;
+  text-align: center;
+  width: fit-content;
+  margin: 5px 0px 5px 0;
+  align-self: flex-end;
+}
+
+.buttonSmall:hover {
+  background-color: #aafcb8;
+  color: #285943;
+  text-decoration: none;
+}
+
 @keyframes press {
   0% {
     transform: scale(0.9);

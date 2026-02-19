@@ -38,8 +38,8 @@ export default async function Navbar() {
         </SignedIn>
       </div>
       <div>
+        <Link href={"/"}>Home</Link>&nbsp;|&nbsp;
         <SignedOut>
-          <Link href={"/"}>Home</Link>&nbsp;|&nbsp;
           <SignInButton className="button" />
           <SignUpButton className="button" />
         </SignedOut>

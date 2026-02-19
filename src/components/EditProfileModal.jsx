@@ -9,8 +9,8 @@ export default function EditProfileModal({ profile, universities }) {
   return (
     <div className="mb-10 flex flex-col items-center">
       {!open && (
-        <button className="button" onClick={() => setOpen(true)}>
-          Edit Profile
+        <button className="button mb-6" onClick={() => setOpen(true)}>
+          Change University
         </button>
       )}
 

@@ -8,10 +8,11 @@ export default function FormModal() {
 
   return (
     <>
-      <button onClick={() => setOpen(true)} className="button">
-        Create a new Listing
-      </button>
-
+      <div className="flex justify-center mt-8">
+        <button onClick={() => setOpen(true)} className="button">
+          Create a new Listing
+        </button>
+      </div>
       {open && (
         <div>
           <div>

@@ -40,7 +40,7 @@ export default async function StudentArea({ params }) {
       <div className={style.profileDiv}>
         <div className={style.usernameDiv}>
           <h1 className="font-bold">{profile.username}&apos;s Profile</h1>
-          <UserButton />
+          <UserButton aria-label="Manage profile" />
         </div>
         <div className="flex flex-row place-content-between">
           <div>

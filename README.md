@@ -14,7 +14,7 @@ We found that when you go to university, it can be difficult to buy everything y
     border: 6px solid #ffffff
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);"
   />
-</a>
+</a> /
 
 <a href="https://github.com/TSBIceLizard">
   <img 
@@ -26,7 +26,7 @@ We found that when you go to university, it can be difficult to buy everything y
     border: 6px solid #ffffff
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);"
   />
-</a>
+</a> /
 
 <a href="https://github.com/pepnochizzy">
   <img 
@@ -38,7 +38,7 @@ We found that when you go to university, it can be difficult to buy everything y
     border: 6px solid #ffffff
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);"
   />
-</a>
+</a> /
 
 <a href="https://github.com/andypixels123">
   <img 
@@ -71,25 +71,40 @@ We found that when you go to university, it can be difficult to buy everything y
 
 ## Features
 
-[x] Marketpage to sell/buy/borrow items
-[x] Create posts
-[x] Log in/sign-up/auth
-[x] Filter by university to get personalised feeds
-[x] Comments
-[x] Likes
-[x] Delete posts
-[x] Update/edit posts
-[x] Image Bucket, to have images on selling posts
-[x] Filter by category and sort by date
+- [x] Marketpage to sell/buy/borrow items
+- [x] Create posts
+- [x] Log in/sign-up/auth
+- [x] Filter by university to get personalised feeds
+- [x] Comments
+- [x] Likes
+- [x] Delete posts
+- [x] Update/edit posts
+- [x] Image Bucket, to have images on selling posts
+- [x] Filter by category and sort by date
 
 ## Stretch goals
 
-[] Events page
-[] Attendees function ("I'm interested!"/"I'm going")
+- [] Events page
+- [] Attendees function ("I'm interested!"/"I'm going")
+- [x] Image Bucket, to have images on selling posts
 
 ## Resources
+- https://coolors.co/d7fff1-aafcb8-8cd790-77af9c-285943
+- Clip Path: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clip-path
+- Tailwind Docs: https://tailwindcss.com/
+- Didit repo: https://github.com/Tech-Educators/didit-reddit-upvote-example
+- previous assignment: https://github.com/pepnochizzy/RePaged--book-review-site-iteration-3
+- Clerk docs: https://clerk.com/docs/nextjs/getting-started/quickstart
+- Lucide docs: https://lucide.dev/icons/
+- Radix docs (component removed): https://www.radix-ui.com/primitives/docs/components/dropdown-menu
+- Mdn for small checks on syntax
+- Search Params: https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#search-params
+- Data fetching: https://nextjs.org/docs/app/building-your-application/data-fetching/fetching
+- Search Params: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+- Previous software development course code involving dynamic pages for revision purposes and examples.
+- W3 css: 'object-fit' reference for marketplace item images.
 
-# Supabase Buckets
+## Supabase Buckets
 
 https://supabase.com/storage
 https://supabase.com/docs/reference/javascript/initializing
@@ -127,17 +142,6 @@ https://supabase.com/docs/reference/javascript/initializing
 
 - As with anytime we do group assignments, I find them invaluable for learning to work on others' code. It is an extremely useful skill within a workplace and so I always appreciate the ability to work with others vs making an application solo. It is fun to bounce ideas with teammates and to see different ways to approach a solution to how I usually do it - often finding simpler ways!
 - Git. This assignment was a well needed refresher on Git, especially for merge conflicts and reviewing/approving teammates code.
-
-### resources:
-
-Clip Path: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clip-path
-Tailwind Docs: https://tailwindcss.com/
-Didit repo: https://github.com/Tech-Educators/didit-reddit-upvote-example
-previous assignment: https://github.com/pepnochizzy/RePaged--book-review-site-iteration-3
-Clerk docs: https://clerk.com/docs/nextjs/getting-started/quickstart
-Lucide docs: https://lucide.dev/icons/
-Radix docs (component removed): https://www.radix-ui.com/primitives/docs/components/dropdown-menu
-Mdn for small checks on syntax
 
 ## Uli's reflection
 
@@ -191,12 +195,6 @@ Once development began, the first steps were to configure the Next project and e
 - A variety of fixes: Outside of the 5 main tasks I took on, I also contributed a veriety of fixes where necessary.
 - Dummy data: Created alot of dummy data and some example accounts to populate the marketplace.
 
-### Resources
-
-https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#search-params
-https://nextjs.org/docs/app/building-your-application/data-fetching/fetching
-https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
-
 ## Andrew's reflection
 
 ### What went well
@@ -215,7 +213,11 @@ https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
 - There were some issues with mixing Tailwind with traditional (global) css and css modules, a better approach, in my opinion, would have been to choose one method and stick with it. Mixing styling methods sometimes made it hard to locate particular styles that needed changing as some global styles applied to elements that had css modules also.
 - Communication was good while some technical issues included my loss of laptop sound on more than one occasion meaning I could not hear team members speaking.
 
-### Resources
+## Lighthouse Report
+<img width="458" height="141" alt="image" src="https://github.com/user-attachments/assets/b6bc775c-e310-4126-83b3-83e0197a1600" />
 
-- Previous software development course code involving dynamic pages for revision purposes and examples.
-- W3 css - 'object-fit' reference for marketplace item images.
+## Supabase Schema and Image Bucket screenshots
+<img width="658" height="512" alt="image" src="https://github.com/user-attachments/assets/ffc7017f-c430-49c6-b430-5512b5d8bd36" />
+<img width="1173" height="361" alt="image" src="https://github.com/user-attachments/assets/908316b1-8435-4dbf-a244-7f6959134e7c" />
+
+

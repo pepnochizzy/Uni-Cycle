@@ -4,10 +4,53 @@ We found that when you go to university, it can be difficult to buy everything y
 
 ## Contributers
 
-- Ulrike K
-- Arron B
-- Lara G
-- Andrew B
+<a href="https://github.com/Culibean">
+  <img 
+    src="https://avatars.githubusercontent.com/u/240493466?s=400&v=4" 
+    alt="Uli's image"
+    width="120"
+    height="120"
+    style="clip-path: circle();
+    border: 6px solid #ffffff
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);"
+  />
+</a>
+
+<a href="https://github.com/TSBIceLizard">
+  <img 
+    src="https://avatars.githubusercontent.com/u/32339056?v=4" 
+    alt="Arrons's image"
+    width="120"
+    height="120"
+    style="clip-path: circle();
+    border: 6px solid #ffffff
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);"
+  />
+</a>
+
+<a href="https://github.com/pepnochizzy">
+  <img 
+    src="https://avatars.githubusercontent.com/u/170467237?v=4" 
+    alt="Arrons's image"
+    width="120"
+    height="120"
+    style="clip-path: circle();
+    border: 6px solid #ffffff
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);"
+  />
+</a>
+
+<a href="https://github.com/andypixels123">
+  <img 
+    src="https://avatars.githubusercontent.com/u/244223899?v=4" 
+    alt="Arrons's image"
+    width="120"
+    height="120"
+    style="clip-path: circle();
+    border: 6px solid #ffffff
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);"
+  />
+</a>
 
 ## Built with
 
@@ -28,20 +71,21 @@ We found that when you go to university, it can be difficult to buy everything y
 
 ## Features
 
-- Marketpage to sell/buy/borrow items
-- Create posts
-- Log in/sign-up/auth
-- Filter by university to get personalised feeds
-- Comments
-- Likes
-- Delete posts
-- Update/edit posts
+[x] Marketpage to sell/buy/borrow items
+[x] Create posts
+[x] Log in/sign-up/auth
+[x] Filter by university to get personalised feeds
+[x] Comments
+[x] Likes
+[x] Delete posts
+[x] Update/edit posts
+[x] Image Bucket, to have images on selling posts
+[x] Filter by category and sort by date
 
 ## Stretch goals
 
-- Events page
-- Attendees function ("I'm interested!"/"I'm going")
-- Image Bucket, to have images on selling posts
+[] Events page
+[] Attendees function ("I'm interested!"/"I'm going")
 
 ## Resources
 

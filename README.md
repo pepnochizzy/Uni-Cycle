@@ -101,8 +101,8 @@ We found that when you go to university, it can be difficult to buy everything y
 - Search Params: https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#search-params
 - Data fetching: https://nextjs.org/docs/app/building-your-application/data-fetching/fetching
 - Search Params: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
-- Previous software development course code involving dynamic pages for revision purposes and examples.
-- W3 css: 'object-fit' reference for marketplace item images.
+- CSS 'object-fit' reference: https://www.w3schools.com/css/css3_object-fit.asp
+- Previous software development course code.
 
 ## Supabase Buckets
 
@@ -206,6 +206,7 @@ Once development began, the first steps were to configure the Next project and e
 - Implemented a global 'return to top' button component
 - Worked on final css fixes and modifications
 - I successfully worked as part of a team using Git / Git branching without too many issues... just the occasional code conflict which was successfully resolved.
+- I had an issue with version conflict in my code and I learnt how to resolve this issue locally using the compare feature in VsCode. 
 - This was a great team to work with, there were no conflicts and I would happily work with all team members again. Overall, I think the project was a great success although there were some stretch goals that we would have liked to have included given more time.
 
 ### Any struggles?
